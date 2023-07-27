@@ -28,7 +28,7 @@ const MemesScreen = () => {
 
 const aspectRatio = 5 / 5;
 const screenWidth = Dimensions.get('window').width;
-const imageWidth = screenWidth - 40; // Ajuste a margem conforme necessário
+const imageWidth = screenWidth - 40; 
 const imageHeight = imageWidth / aspectRatio;
 
 const styles = StyleSheet.create({
