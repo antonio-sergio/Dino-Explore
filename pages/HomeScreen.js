@@ -17,12 +17,13 @@ function HomeScreen({ navigation }) {
           </View>
           <Text style={styles.subtitle}>Recomendação de Vídeo</Text>
           <View style={styles.containerVideo}>
-            <WebView
+            {/* <WebView
               style={{ width: '100%', height: 300 }}
               source={{ uri: 'https://www.youtube.com/embed/8N2Ia94Zf5g' }}
               allowsFullscreenVideo={true}
               mediaPlaybackRequiresUserAction={false}
-            />
+            /> */}
+             <iframe src="https://www.youtube.com/embed/8N2Ia94Zf5g" height={'100%'} width={'300px'} />
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('Memes')} style={styles.navButton}>
             <Text style={styles.btnMeme}>Divirta-se com os Memes</Text>
