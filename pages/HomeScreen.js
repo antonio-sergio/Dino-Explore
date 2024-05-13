@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, Dimensions, Text, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, Dimensions, Text, ScrollView, SafeAreaView, TouchableOpacity, Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 import banner from '../assets/banner.jpg';
 const { width } = Dimensions.get('window');
@@ -17,17 +17,22 @@ function HomeScreen({ navigation }) {
           </View>
           <Text style={styles.subtitle}>Recomendação de Vídeo</Text>
           <View style={styles.containerVideo}>
-            {/* <WebView
-              style={{ width: '100%', height: 300 }}
-              source={{ uri: 'https://www.youtube.com/embed/8N2Ia94Zf5g' }}
-              allowsFullscreenVideo={true}
-              mediaPlaybackRequiresUserAction={false}
-            /> */}
-             <iframe src="https://www.youtube.com/embed/8N2Ia94Zf5g" height={'100%'} width={'300px'} />
+            {Platform.OS === "web" ? (
+              <iframe src="https://www.youtube.com/embed/8N2Ia94Zf5g" height={'100%'} width={'100%'} />
+
+            ) : (
+              <WebView
+                style={{ width: '100%', height: 300 }}
+                source={{ uri: 'https://www.youtube.com/embed/8N2Ia94Zf5g' }}
+                allowsFullscreenVideo={true}
+                mediaPlaybackRequiresUserAction={false}
+              />)
+            }
+
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('Memes')} style={styles.navButton}>
             <Text style={styles.btnMeme}>Divirta-se com os Memes</Text>
-        </TouchableOpacity>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
