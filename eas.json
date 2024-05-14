@@ -3,15 +3,13 @@
     "version": ">= 3.13.2"
   },
   "build": {
-    "development": {
-      "ios": {"image": "latest"},
-      "developmentClient": true,
-      "distribution": "internal"
-    },
-    "preview": {
-      "distribution": "internal"
-    },
     "production": {
+      "android": {
+        "image": "latest"
+      },
+      "ios": {
+        "image": "latest"
+      }
     }
   },
   "submit": {
