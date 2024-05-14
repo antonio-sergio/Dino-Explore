@@ -9,11 +9,9 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal",
-      "image": "latest"  
+      "distribution": "internal"
     },
     "production": {
-      "image": "latest"  
     }
   },
   "submit": {
